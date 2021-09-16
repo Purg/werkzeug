@@ -43,6 +43,9 @@ Unreleased
 -   Ad-hoc TLS certs are generated with SAN matching CN. :issue:`2158`
 -   Fix memory usage for locals when using Python 3.6 or pre 0.4.17
     greenlet versions. :pr:`2212`
+-   Fix the type annotation for the ``on_update`` parameter of the
+    ``CallbackDict`` constructor to use a bound TypeVar instead of an invariant
+    type.
 
 
 Version 2.0.1

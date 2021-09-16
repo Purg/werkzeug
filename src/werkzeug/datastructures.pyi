@@ -681,11 +681,13 @@ class ContentSecurityPolicy(UpdateDictMixin[str, str], Dict[str, str]):
     def _del_value(self, key: str) -> None: ...
     def to_header(self) -> str: ...
 
+_CD = TypeVar("_CD", bound="CallbackDict")
+
 class CallbackDict(UpdateDictMixin[K, V], Dict[K, V]):
     def __init__(
         self,
         initial: Optional[Union[Mapping[K, V], Iterable[Tuple[K, V]]]] = None,
-        on_update: Optional[Callable[[CallbackDict], None]] = None,
+        on_update: Optional[Callable[[_CD], None]] = None,
     ) -> None: ...
 
 class HeaderSet(Set[str]):
